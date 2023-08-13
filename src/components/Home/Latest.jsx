@@ -10,7 +10,9 @@ export default function Latest() {
   const { data, error, loading } = useFetch(url);
 
   useEffect(() => {
-    setProducts(data);
+    if (data) {
+      setProducts(data);
+    }
   }, [data]);
 
   return (

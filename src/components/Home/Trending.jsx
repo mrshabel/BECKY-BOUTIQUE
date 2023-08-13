@@ -10,8 +10,11 @@ export default function Trending() {
   const { data, error, loading } = useFetch(url);
 
   useEffect(() => {
-    setProducts(data);
+    if (data) {
+      setProducts(data);
+    }
   }, [data]);
+
   return (
     <section className="pt-16">
       <h1 className="font-bold text-2xl uppercase text-gray-900 mb-4 ">
