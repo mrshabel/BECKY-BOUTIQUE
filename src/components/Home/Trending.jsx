@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import {useFetch} from "../../hooks/useFetch";
 
 export default function Trending() {
   const [products, setProducts] = useState([]);

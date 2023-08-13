@@ -2,7 +2,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import ProductCard from "../products/ProductCard";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 
 export default function Latest() {
   const [products, setProducts] = useState([]);

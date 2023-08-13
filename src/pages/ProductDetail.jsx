@@ -1,7 +1,7 @@
 import SingleProduct from "../components/products/SingleProduct";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import useFetch from "../hooks/useFetch";
+import { useFetch } from "../hooks/useFetch";
 
 export default function ProductDetail() {
   const [product, setProduct] = useState([]);

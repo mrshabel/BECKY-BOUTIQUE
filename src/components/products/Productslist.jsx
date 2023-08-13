@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import {useFetch} from "../../hooks/useFetch";
 import ProductCard from "./ProductCard";
 export default function Productlist() {
   const [products, setProducts] = useState([]);
