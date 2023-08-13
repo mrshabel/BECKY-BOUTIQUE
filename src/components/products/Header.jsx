@@ -6,11 +6,11 @@ export default function Header() {
       <header className="text-center mb-8 lg:px-[12px]">
         <h1 className="font-semibold text-[20px] mb-2">Beckys</h1>
         <p className="font-extralight text-[14px]">
-          beckys Boutique: Embrace a New Era of Style. Keeping True to Our
+          Beckys Boutique: Embrace a New Era of Style. Keeping True to Our
           Fashion Legacy, Experience Iconic Designs and Timeless Elegance. From
           Signature Denim to Chic Co-ords, Discover Your Perfect Look. Infused
           with the Essence of Endless Possibilities, Start Your Fashion Voyage
-          Today. Explore the Full Collection, available exclusively at beckys
+          Today. Explore the Full Collection, available exclusively at Beckys
         </p>
       </header>
       <div className="pb-4">

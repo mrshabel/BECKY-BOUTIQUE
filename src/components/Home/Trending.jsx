@@ -1,21 +1,27 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 export default function Trending() {
+  const [products, setProducts] = useState([]);
+  const url = "https://fakestoreapi.com/products?limit=6&sort=asc";
+  const { data, error, loading } = useFetch(url);
+
+  useEffect(() => {
+    setProducts(data);
+  }, [data]);
   return (
     <section className="pt-16">
       <h1 className="font-bold text-2xl uppercase text-gray-900 mb-4 ">
         Trending sales
       </h1>
       <main className="">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 place-items-center">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </main>
       <footer className="mt-5">

@@ -35,8 +35,8 @@ export default function Hero() {
           </Link>
         </button>
       </aside>
-      <aside className=" md:w-[400px] ">
-        <div className="">
+      <aside className="flex justify-center ">
+        <div className="w-full sm:w-[60vw] md:w-[400px]">
           {/* <HeroCard /> */}
           <Carousel images={images} />
         </div>

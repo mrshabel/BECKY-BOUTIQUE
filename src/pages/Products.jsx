@@ -3,7 +3,7 @@ import Productlist from "../components/products/Productslist";
 
 export default function Products() {
   return (
-    <section className="pb-12">
+    <section className="py-12">
       <header>
         <Header />
       </header>

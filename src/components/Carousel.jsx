@@ -26,10 +26,10 @@ export default function Carousel({ images }) {
       className=""
     >
       {images.map((image, index) => (
-        <SwiperSlide>
+        <SwiperSlide key={index}>
           <img
             src={image}
-            className="h-[65vh] w-full rounded-md"
+            className="h-[50vh] md:h-[65vh] w-full rounded-md"
             alt="women's clothing"
           />
         </SwiperSlide>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Searchbar from "./Searchbar";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiFillHeart, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import CartIcon from "./CartIcon";
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header className="flex justify-between items-center px-4 py-2 h-14 border-b border-b-gray-200 bg-white shadow-lg fixed top-0 left-0 w-full z-10">
-      <h3 className="font-semibold uppercase">beckys</h3>
+      <h3 className="font-semibold uppercase">Beckys</h3>
       <ul className="hidden sm:flex gap-6 px-6 ">
         {links.map((link, index) => (
           <li key={index} className="py-2">
@@ -37,7 +37,7 @@ export default function Navbar() {
       </ul>
 
       <div
-        className={`transition-all duration-500 h-full sm:hidden z-10 bg-gray-100 w-[60%] fixed ${
+        className={`transition-all duration-500 h-full sm:hidden z-10 bg-gray-100 w-[60%] ${
           isOpen ? "fixed left-0 top-0 " : "fixed left-[-100%] top-0"
         } `}
       >
@@ -49,12 +49,12 @@ export default function Navbar() {
             <AiOutlineClose size={"1.5em"} />
           </div>
           <div className="text-center pt-7">
-            <h2 className="font-semibold ">beckys Boutique</h2>
+            <h2 className="font-semibold ">Beckys Boutique</h2>
             <p className="font-light ">Welcome Back</p>
           </div>
           <ul className=" flex flex-col gap-10 px-4 uppercase pt-12">
             {links.map((link, index) => (
-              <li key={index} className="border-b py-1">
+              <li key={index} className="border-b py-1" onClick={handleToggle}>
                 <NavLink to={link.link} className="hover:border-b">
                   {link.title}
                 </NavLink>
@@ -66,8 +66,11 @@ export default function Navbar() {
 
       <div className="">
         <div className="flex p-2 items-center gap-2">
-          <Searchbar />
+          <div className="hidden md:block">
+            <Searchbar />
+          </div>
           <CartIcon />
+          <AiFillHeart fill={"red"} size={20} />
         </div>
       </div>
       <div className="sm:hidden p-2 cursor-pointer" onClick={handleToggle}>

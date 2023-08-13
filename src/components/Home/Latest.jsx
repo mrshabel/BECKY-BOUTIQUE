@@ -1,21 +1,32 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ProductCard from "../products/ProductCard";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 export default function Latest() {
+  const [products, setProducts] = useState([]);
+  const url = "https://fakestoreapi.com/products?limit=6";
+  const { data, error, loading } = useFetch(url);
+
+  useEffect(() => {
+    setProducts(data);
+  }, [data]);
+
   return (
     <section className="">
       <h1 className="font-bold text-2xl uppercase text-gray-900 mb-4">
         Latest Collection
       </h1>
       <main className="">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 justify-center">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 place-items-center ">
+          {products.map((product) => (
+            <ProductCard
+              className="bg-green-200"
+              key={product.id}
+              product={product}
+            />
+          ))}
         </div>
       </main>
       <footer className="mt-5">
