@@ -3,8 +3,6 @@ export function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  console.log(data, loading, error);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,8 +16,10 @@ export function useFetch(url) {
         setLoading(false);
       }
     };
-    fetchData();
+    return () => fetchData();
   }, [url]);
+
+  console.log(data, loading, error);
 
   return { data, loading, error };
 }
