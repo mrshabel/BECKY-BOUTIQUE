@@ -3,7 +3,7 @@ import { useFetch } from "../../hooks/useFetch";
 import ProductCard from "./ProductCard";
 export default function Productlist() {
   const [products, setProducts] = useState([]);
-  const { data, loading, error } = useFetch("http://fakestoreapi.com/products");
+  const { data, loading, error } = useFetch("https://fakestoreapi.com/products");
   useEffect(() => {
     if (data) {
       setProducts(data);
