@@ -7,8 +7,8 @@ export function useFetch(url) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const result = await fetch(url);
-        const fetchedData = await result.json();
+        const res = await fetch(url);
+        const fetchedData = await res.json();
         setData(fetchedData);
       } catch (error) {
         setError(error);
