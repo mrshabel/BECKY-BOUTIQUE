@@ -22,7 +22,7 @@ export default function SingleProduct({ product }) {
     <main className="h-full flex flex-col items-center sm:flex-row sm:justify-center gap-2 md:gap-6 py-6 mx-auto md:w-[50vw] ">
       <section className="w-[70%] sm:w-[60%] md:w-[350px] h-[350px] md:h-[400px] ">
         <img
-          src={product.image}
+          src={product?.images[0]}
           className="w-full h-[300px] object-center aspect-auto bg-no-repeat "
           alt="product"
         />

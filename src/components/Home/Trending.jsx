@@ -6,12 +6,12 @@ import { useFetch } from "../../hooks/useFetch";
 
 export default function Trending() {
   const [products, setProducts] = useState([]);
-  const url = "https://fakestoreapi.com/products?limit=6&sort=asc";
+  const url = "https://dummyjson.com/products?limit=6&skip=15";
   const { data, error, loading } = useFetch(url);
 
   useEffect(() => {
     if (data) {
-      setProducts(data);
+      setProducts(data.products);
     }
   }, [data]);
 

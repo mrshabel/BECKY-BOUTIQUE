@@ -24,14 +24,16 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="flex flex-col gap-8 h-[400px] w-[200px] md:w-[300px] px-2 py-1 pb-2 rounded-md ">
-      <div className="flex justify-center w-full h-[50%]">
-        <Link to={`/products/${product.id}`}>
-          <img
-            src={product.image}
-            alt={product.title}
-            className="w-[70%] h-full rounded-md object-center"
-          />
-        </Link>
+      <div className="flex justify-center w-[100%] h-[50%]">
+        <div className="w-[70%]">
+          <Link to={`/products/${product.id}`}>
+            <img
+              src={product.images[0]}
+              alt={product.title}
+              className="w-full h-full rounded-md object-center"
+            />
+          </Link>
+        </div>
       </div>
       <div className="flex flex-col items-center gap-4">
         <div className="px-1 text-center">
@@ -43,7 +45,7 @@ export default function ProductCard({ product }) {
             {product.price}
           </p>
         </div>
-        <div className="flex gap-8 justify-between items-center p-1 h-10 w-full ">
+        <div className="flex gap-8 justify-around items-center p-1 h-10 w-full ">
           <SaveProduct />
 
           <button
