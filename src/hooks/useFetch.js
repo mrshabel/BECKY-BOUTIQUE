@@ -16,7 +16,7 @@ export function useFetch(url) {
         setLoading(false);
       }
     };
-    return () => fetchData();
+    fetchData();
   }, [url]);
 
   console.log(data, loading, error);
