@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import {useFetch} from "../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 
 export default function Trending() {
   const [products, setProducts] = useState([]);
-  const url = "https://fakestoreapi.com/products?limit=6&sort=asc";
+  const url = "http://fakestoreapi.com/products?limit=6&sort=asc";
   const { data, error, loading } = useFetch(url);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Trending() {
   }, [data]);
 
   return (
-    <section className="pt-16">
+    <section className="pt-16 md:pt-20 ">
       <h1 className="font-bold text-2xl uppercase text-gray-900 mb-4 ">
         Trending sales
       </h1>

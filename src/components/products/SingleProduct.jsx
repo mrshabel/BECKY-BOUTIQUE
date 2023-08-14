@@ -19,7 +19,7 @@ export default function SingleProduct({ product }) {
   }
 
   return (
-    <main className="h-full flex flex-col items-center sm:flex-row sm:justify-center gap-2 md:gap-6 py-6 ">
+    <main className="h-full flex flex-col items-center sm:flex-row sm:justify-center gap-2 md:gap-6 py-6 mx-auto md:w-[50vw] ">
       <section className="w-[70%] sm:w-[60%] md:w-[350px] h-[350px] md:h-[400px] ">
         <img
           src={product.image}
