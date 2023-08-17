@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Searchbar from "./Searchbar";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AiFillHeart, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
-import CartIcon from "./CartIcon";
+import CartIcon from "../cart/CartIcon";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="flex justify-between items-center px-4 py-2 h-14 border-b border-b-gray-200 bg-white shadow-lg fixed top-0 left-0 w-full z-10">
+    <header className="flex justify-between items-center px-4 py-2 h-14 border-b-gray-200 bg-white shadow-sm fixed top-0 left-0 w-full z-10">
       <h3 className="font-semibold uppercase">Beckys</h3>
       <ul className="hidden sm:flex gap-6 px-6 ">
         {links.map((link, index) => (
@@ -37,7 +37,7 @@ export default function Navbar() {
       </ul>
 
       <div
-        className={`transition-all duration-500 h-full sm:hidden z-10 bg-gray-100 w-[60%] ${
+        className={`transition-all duration-500 h-full sm:hidden z-50 bg-gray-100 w-[60%] ${
           isOpen ? "fixed left-0 top-0 " : "fixed left-[-100%] top-0"
         } `}
       >

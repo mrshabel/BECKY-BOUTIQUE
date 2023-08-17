@@ -28,6 +28,7 @@ export default function ProductCard({ product }) {
         <div className="w-[70%]">
           <Link to={`/products/${product.id}`}>
             <img
+              loading="lazy"
               src={product.images[0]}
               alt={product.title}
               className="w-full h-full rounded-md object-center"

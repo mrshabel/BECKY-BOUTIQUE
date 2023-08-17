@@ -1,3 +1,6 @@
+* {
+  scroll-behavior: smooth;
+}
 .swiper-pagination-bullet-active {
   background-color: rgb(14, 13, 13) !important;
 }

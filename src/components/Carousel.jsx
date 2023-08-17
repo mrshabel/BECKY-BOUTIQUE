@@ -28,6 +28,7 @@ export default function Carousel({ images }) {
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <img
+            loading="lazy"
             src={image}
             className="h-[50vh] md:h-[65vh] w-full rounded-md"
             alt="women's clothing"

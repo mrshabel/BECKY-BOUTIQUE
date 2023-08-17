@@ -1,4 +1,3 @@
-import hero1 from "../../assets/images/hero1.jpg";
 import SaveProduct from "./SaveProduct";
 import { useCart } from "../../context/CartContext";
 import toast from "react-hot-toast";
@@ -20,14 +19,15 @@ export default function SingleProduct({ product }) {
 
   return (
     <main className="h-full flex flex-col items-center sm:flex-row sm:justify-center gap-2 md:gap-6 py-6 mx-auto md:w-[50vw] ">
-      <section className="w-[70%] sm:w-[60%] md:w-[350px] h-[350px] md:h-[400px] ">
+      <section className="w-[70%] sm:w-[250px] md:w-[300px] h-[350px] md:h-[400px]">
         <img
+          loading="lazy"
           src={product?.images[0]}
           className="w-full h-[300px] object-center aspect-auto bg-no-repeat "
           alt="product"
         />
       </section>
-      <section className=" px-4 flex flex-col gap-5 md:gap-6 md:justify-start">
+      <section className=" px-4 h-full md:pt-5 flex flex-col gap-5 md:gap-6 md:justify-start">
         <div className="flex flex-col gap-4">
           <h1 className="tracking tracking-widest font-normal text-xl self-start">
             {product.title}
