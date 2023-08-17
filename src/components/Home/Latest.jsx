@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import ProductLoader from "../products/ProductLoader";
 import useLoader from "../../hooks/useLoader";
+import Slider from "../Slider";
 
 export default function Latest() {
   const [products, setProducts] = useState([]);
@@ -27,16 +28,23 @@ export default function Latest() {
       <h1 className="font-bold text-2xl uppercase text-gray-900 mb-4">
         Latest Collection
       </h1>
-      <main className="">
-        <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 place-items-center ">
-          {dataLoading
-            ? Array.from({ length: 6 }, (_, i) => (
-                <ProductLoader size="small" />
-              ))
-            : products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-        </div>
+      <main className="pt-7">
+        {dataLoading ? (
+          <div className="w-full mx-auto lg:w-[90%] xl:w-[60%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 lg:gap-10 place-items-center">
+            {Array.from({ length: 3 }, (_, i) => (
+              <ProductLoader size="small" />
+            ))}{" "}
+          </div>
+        ) : (
+          <>
+            <div className="w-[65vw] sm:w-[35vw] mx-auto md:hidden">
+              <Slider products={products} size={"small"} />
+            </div>
+            <div className="w-full hidden md:block mx-auto lg:w-[90%] xl:w-[60%]">
+              <Slider products={products} size={"large"} />
+            </div>
+          </>
+        )}
       </main>
       <footer className="mt-5">
         <Link

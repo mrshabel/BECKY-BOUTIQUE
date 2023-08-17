@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <div className="flex flex-col gap-8 h-[400px] w-[200px] md:w-[300px] px-2 py-1 pb-2 rounded-md ">
+    <div className="flex flex-col gap-8 h-[400px] w-[200px] md:w-[280px] lg:w-[300px] px-2 py-1 pb-2 rounded-md ">
       <div className="flex justify-center w-[100%] h-[50%]">
         <div className="w-[70%]">
           <Link to={`/products/${product.id}`}>
